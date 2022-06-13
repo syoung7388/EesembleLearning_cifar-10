@@ -1,0 +1,1 @@
+soft: 98.15, ['resnet50', 'resnet101', 'resnet152']/nhard: 98.1, ['resnet50', 'resnet101', 'resnet152']/n
