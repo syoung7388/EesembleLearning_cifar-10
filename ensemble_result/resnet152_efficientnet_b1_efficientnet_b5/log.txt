@@ -1,0 +1,17 @@
+dis: 4.650, predict: 2, model: resnet152
+dis: 2.497, predict: 3, model: resnet152
+dis: 5.636, predict: 0, model: resnet152
+dis: 0.538, predict: 7, model: efficientnet_b1
+dis: 4.297, predict: 1, model: efficientnet_b5
+dis: 9.468, predict: 6, model: resnet152
+dis: 1.689, predict: 3, model: efficientnet_b5
+dis: 0.414, predict: 2, model: resnet152
+dis: 3.984, predict: 1, model: efficientnet_b5
+dis: 0.711, predict: 6, model: efficientnet_b1
+dis: 3.518, predict: 4, model: efficientnet_b5
+dis: 5.462, predict: 8, model: resnet152
+dis: 7.371, predict: 5, model: efficientnet_b5
+dis: 2.554, predict: 3, model: resnet152
+dis: 2.417, predict: 2, model: efficientnet_b1
+dis: 1.806, predict: 0, model: resnet152
+hard voting:98.080, soft voting:98.230

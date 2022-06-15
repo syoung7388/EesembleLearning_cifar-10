@@ -1,2 +1,21 @@
 ,ens,hard,soft
-0,"['resnet50', 'resnet101', 'resnet152']",98.1,98.15
+0,"('resnet50', 'resnet101', 'resnet152')",98.1,98.15
+1,"('resnet50', 'resnet101', 'efficientnet_b1')",97.72,97.83
+2,"('resnet50', 'resnet101', 'efficientnet_b3')",97.68,97.71
+3,"('resnet50', 'resnet101', 'efficientnet_b5')",97.94,97.95
+4,"('resnet50', 'resnet152', 'efficientnet_b1')",97.92,98.07000000000001
+5,"('resnet50', 'resnet152', 'efficientnet_b3')",97.98,97.99
+6,"('resnet50', 'resnet152', 'efficientnet_b5')",98.11999999999999,98.21
+7,"('resnet50', 'efficientnet_b1', 'efficientnet_b3')",97.33000000000001,97.41
+8,"('resnet50', 'efficientnet_b1', 'efficientnet_b5')",97.56,97.82
+9,"('resnet50', 'efficientnet_b3', 'efficientnet_b5')",97.75,97.81
+10,"('resnet101', 'resnet152', 'efficientnet_b1')",98.15,98.17
+11,"('resnet101', 'resnet152', 'efficientnet_b3')",98.18,98.28
+12,"('resnet101', 'resnet152', 'efficientnet_b5')",98.38,98.36
+13,"('resnet101', 'efficientnet_b1', 'efficientnet_b3')",97.84,97.88
+14,"('resnet101', 'efficientnet_b1', 'efficientnet_b5')",97.92999999999999,98.09
+15,"('resnet101', 'efficientnet_b3', 'efficientnet_b5')",97.99,98.08
+16,"('resnet152', 'efficientnet_b1', 'efficientnet_b3')",98.04,98.09
+17,"('resnet152', 'efficientnet_b1', 'efficientnet_b5')",98.08,98.22999999999999
+18,"('resnet152', 'efficientnet_b3', 'efficientnet_b5')",98.27,98.29
+19,"('efficientnet_b1', 'efficientnet_b3', 'efficientnet_b5')",97.6,97.7

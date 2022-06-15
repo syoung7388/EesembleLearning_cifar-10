@@ -40,9 +40,12 @@ _, test_dataloader = getdata('drive/app/cifar10/', 1, 224)
 
 #[Ensemble Comb]
 file_names = [ 'resnet50', 'resnet101', 'resnet152', 'efficientnet_b1', 'efficientnet_b3', 'efficientnet_b5']
+file_comb = list(combinations(file_names, 3))
+
 
 #[Ensemble method]
 def hard_ensemble(preds):
+    global same_answer
     hard_answer = [0]*10
     hard_dis = []
     for i, pred in enumerate(preds):
@@ -52,6 +55,7 @@ def hard_ensemble(preds):
 
 
     if max(hard_answer) == 1:
+        same_answer += 1
         hard_dis.sort(reverse = True)
         comb_log.write(f"dis: {hard_dis[0][0]:.3f}, predict: {hard_dis[0][1]}, model: {comb[hard_dis[0][2]]}\n")
         return hard_dis[0][-2]
@@ -65,6 +69,7 @@ def hard_ensemble(preds):
     
 
 tot_result = {"ens":[], "hard":[], "soft":[]}
+same_answer = 0
 for comb in file_comb:
     print(comb)
     models = []
@@ -76,6 +81,8 @@ for comb in file_comb:
     result_pd = {"soft":[], "hard":[], "labels":[]}
     comb_log = open(f"./ensemble_result/{log_dir}/log.txt", "a")
 
+
+    #[Model]
     for f in comb:
         model_name = f
         if 'resnet' in f:
@@ -93,7 +100,7 @@ for comb in file_comb:
         model.eval()
         models.append(model)
         
-        
+    #[Test] 
     with torch.no_grad():    
         hard_sc = 0
         soft_sc = 0
@@ -116,7 +123,9 @@ for comb in file_comb:
                 result_pd["soft"].append(soft_ans)
                 result_pd["labels"].append(labels.item())
                 pbar.update(1)
-        
+
+
+    #[Result Save]    
     hard_test_acc = (hard_sc / len(test_dataloader))*100 
     soft_test_acc = (soft_sc / len(test_dataloader))*100 
     
@@ -131,8 +140,6 @@ for comb in file_comb:
     comb_log.close()
 
 
-
-
 max_s = max(tot_result["soft"])
 max_s_idx = tot_result["soft"].index(max_s)
 max_h = max(tot_result["hard"])
@@ -141,8 +148,9 @@ max_h_idx = tot_result["hard"].index(max_h)
 log = open(f"./ensemble_result/log.txt", "a")
 a = tot_result["ens"][max_s_idx]
 b = tot_result["ens"][max_h_idx]
-log.write(f"soft: {max_s}, {a}/n")
-log.write(f"hard: {max_h}, {b}/n")
+log.write(f"soft: {max_s}, {a}\n")
+log.write(f"hard: {max_h}, {b}\n")
+log.write(f"same answer: {same_answer}/{len(test_dataloader)}\n")
 log.close()
 
 tot_result = pd.DataFrame(tot_result)

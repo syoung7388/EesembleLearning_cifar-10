@@ -1,0 +1,26 @@
+dis: 3.239, predict: 0, model: efficientnet_b5
+dis: 4.650, predict: 2, model: resnet152
+dis: 3.760, predict: 5, model: efficientnet_b5
+dis: 5.985, predict: 0, model: efficientnet_b5
+dis: 3.334, predict: 3, model: efficientnet_b5
+dis: 9.323, predict: 7, model: resnet152
+dis: 3.921, predict: 8, model: resnet152
+dis: 2.056, predict: 2, model: resnet50
+dis: 5.636, predict: 0, model: resnet152
+dis: 2.276, predict: 5, model: resnet50
+dis: 1.910, predict: 3, model: efficientnet_b5
+dis: 3.037, predict: 1, model: efficientnet_b5
+dis: 6.622, predict: 3, model: resnet152
+dis: 3.146, predict: 4, model: resnet152
+dis: 1.523, predict: 1, model: resnet152
+dis: 1.689, predict: 3, model: efficientnet_b5
+dis: 0.524, predict: 1, model: resnet50
+dis: 1.787, predict: 3, model: resnet50
+dis: 2.833, predict: 4, model: efficientnet_b5
+dis: 2.554, predict: 3, model: resnet152
+dis: 5.511, predict: 2, model: resnet50
+dis: 1.576, predict: 8, model: resnet50
+dis: 3.863, predict: 2, model: resnet152
+dis: 2.806, predict: 3, model: resnet50
+dis: 1.806, predict: 0, model: resnet152
+hard voting:98.120, soft voting:98.210

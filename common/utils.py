@@ -41,7 +41,7 @@ def draw_color_cell(x,color):
     return color
 def get_result_save_dir(args):
 
-    log_dir =f"/NasData/home/ksy/2022-1/ImageClassification/results/{args.ckpt+args.model_name}"
+    log_dir =f"/NasData/home/ksy/2022-1/Github/EnsembleLearning/experiment_results/{args.ckpt+args.model_name}"
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
         os.makedirs(log_dir+'/model')
